@@ -1,0 +1,73 @@
+{
+    "name": "vue-template-extend-loader",
+    "version": "1.0.0",
+    "description": "webpack处理vue模板的loader配置",
+    "schemaOptions": {
+        "type": "object",
+        "additionalProperties": false,
+        "definitions": {
+            "noEmptyStr": {
+                "type": "string",
+                "minLength": 2
+            }
+        },
+        "properties": {
+            "tag_template": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "tag_extender": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "tag_extends": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "extender_prop_path": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "extends_prop_query": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "extends_prop_mode": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "extends_prop_mode_default": {
+                "$ref": "#/definitions/noEmptyStr"
+            },
+            "mode": {
+                "type": "object",
+                "additionalProperties": true
+            },
+            "cheerioOptions": {
+                "type": "object",
+                "additionalProperties": true
+            },
+            "handler": {
+                "instanceof": "Function"
+            } 
+        }
+    },
+    "extenderOptions": {
+        "tag_template": "template",
+        "tag_extender": "hrxExtender",
+        "tag_extends": "hrxExtend",
+        "extender_prop_path": "path",
+        "extends_prop_query": "query",
+        "extends_prop_mode": "mode",
+        "extends_prop_mode_default": "html",
+        "mode": {
+            "append": "append",
+            "prepend": "prepend",
+            "after": "after",
+            "before": "before",
+            "html": "html",
+            "wrap": "wrap",
+            "wrapInner": "wrapInner",
+            "replace": "replaceWith",
+            "remove": "remove"
+        },
+        "cheerioOptions": {
+            "xmlMode": true,
+            "decodeEntities": false
+        }
+    }
+}
